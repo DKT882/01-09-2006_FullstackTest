@@ -2,6 +2,7 @@ import Button from "../../shared/Button"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../../config";
 const Login = () => {
 
     const [email, setEmail] = useState("");
@@ -15,7 +16,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                "http://localhost:5001/login",
+                `${API_URL}/login`,
                 {
                     email,
                     password

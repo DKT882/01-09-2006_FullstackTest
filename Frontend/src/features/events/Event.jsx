@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "../../shared/Button";
+import { API_URL } from "../../config";
 
 const Event = () => {
     const [event, setEvent] = useState([]);
@@ -10,7 +11,7 @@ const Event = () => {
     const getEvent = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:5001/events"
+                `${API_URL}/events`
             );
             setEvent(response.data);
         } catch (error) {
